@@ -1,6 +1,7 @@
 <h1>amount compute</h1>
 
 <% if @parking.amount.present? #end, show amount %>
+  <p>parking_type<%= @parking.parking_type %></p>
   <p>from <%= @parking.start_at %>to <%= @parking.end_at %></p>
   <p> <%= @parking.duration %> minute</p>
   <p><%= number_to_currency(@parking.amount.to_f / 100, :unit => "¥") %> 元</p>

@@ -1,7 +1,18 @@
 <h1>amount compute</h1>
 
 <%= form_for @parking do |f| %>
+  <% if current_user %>
 
+    <label>
+      <%= f.radio_button :parking_type, "short-term" %>short-term
+    </label>
+
+    <label>
+      <%= f.radio_button :parking_type, "long-term" %>long-term
+    </label>
+  <% else %>
+    common
+  <% end %>
   <p><%= f.submit "start charging" %></p>
 
 <% end %>
